@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
             className="eyebrow"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
+            transition={{ type: "spring" as const, stiffness: 100, damping: 20, delay: 0.1 }}
           >
             Le Parti de l'Avenir
           </motion.span>
@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
             className="title-massive"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
+            transition={{ type: "spring" as const, stiffness: 100, damping: 20, delay: 0.2 }}
           >
             Un Cameroun plus juste, <br/>
             plus <span className="text-gradient">fort</span>, plus propre.
@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.6 }}
+            transition={{ type: "spring" as const, stiffness: 100, damping: 20, delay: 0.6 }}
           >
             <a href="#join" className="btn-glow">
               Rejoindre le mouvement
