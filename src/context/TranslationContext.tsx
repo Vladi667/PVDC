@@ -98,6 +98,24 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.legal': 'Mentions Légales',
     'footer.privacy': 'Politique de Confidentialité',
     'footer.rights': 'Tous droits réservés.',
+
+    // Legal
+    'legal.title': 'Mentions Légales',
+    'legal.editor.title': 'Éditeur du site',
+    'legal.editor.content': 'Le site web pvdc-cam.org est édité par le Parti Vert pour la Démocratie au Cameroun (PVDC), parti politique enregistré au Cameroun. Siège social : Yaoundé, Cameroun. Directrice de la publication : Michèle Bilong Fogoum.',
+    'legal.hosting.title': 'Hébergement',
+    'legal.hosting.content': 'Ce site est hébergé par la société Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis.',
+    'legal.ip.title': 'Propriété intellectuelle',
+    'legal.ip.content': "L'ensemble du contenu de ce site (textes, images, logos) est la propriété exclusive du PVDC, sauf mention contraire. Toute reproduction est interdite sans autorisation préalable.",
+
+    // Privacy
+    'privacy.title': 'Politique de Confidentialité',
+    'privacy.data.title': 'Collecte des données',
+    'privacy.data.content': 'Nous ne collectons que les données personnelles que vous nous fournissez volontairement, notamment lorsque vous nous contactez via notre lien WhatsApp ou par e-mail. Ces données sont strictement utilisées à des fins de communication.',
+    'privacy.cookies.title': 'Cookies',
+    'privacy.cookies.content': "Ce site web n'utilise pas de cookies de traçage publicitaire. Nous respectons votre vie privée et veillons à vous offrir une navigation sécurisée et non intrusive.",
+    'privacy.rights.title': 'Vos Droits',
+    'privacy.rights.content': "Conformément à la législation en vigueur, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles. Vous pouvez exercer ces droits en nous contactant directement."
   },
   en: {
     // Navbar
@@ -187,6 +205,24 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.legal': 'Legal Notice',
     'footer.privacy': 'Privacy Policy',
     'footer.rights': 'All rights reserved.',
+
+    // Legal
+    'legal.title': 'Legal Notice',
+    'legal.editor.title': 'Site Editor',
+    'legal.editor.content': 'The website pvdc-cam.org is published by the Green Party for Democracy in Cameroon (PVDC), a political party registered in Cameroon. Headquarters: Yaoundé, Cameroon. Director of Publication: Michèle Bilong Fogoum.',
+    'legal.hosting.title': 'Hosting',
+    'legal.hosting.content': 'This site is hosted by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.',
+    'legal.ip.title': 'Intellectual Property',
+    'legal.ip.content': 'All content on this site (texts, images, logos) is the exclusive property of PVDC unless otherwise stated. Any reproduction is prohibited without prior authorization.',
+
+    // Privacy
+    'privacy.title': 'Privacy Policy',
+    'privacy.data.title': 'Data Collection',
+    'privacy.data.content': 'We only collect the personal data you voluntarily provide, particularly when you contact us via our WhatsApp link or email. This data is strictly used for communication purposes.',
+    'privacy.cookies.title': 'Cookies',
+    'privacy.cookies.content': 'This website does not use tracking cookies for advertising purposes. We respect your privacy and strive to provide a secure and non-intrusive browsing experience.',
+    'privacy.rights.title': 'Your Rights',
+    'privacy.rights.content': 'In accordance with applicable laws, you have the right to access, rectify, or delete your personal data. You can exercise these rights by contacting us directly.'
   }
 };
 

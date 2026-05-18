@@ -935,3 +935,69 @@
     height: 35vh;
   }
 }
+/* --- Legal Modal --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 800px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  background: rgba(255, 255, 255, 0.9); /* Opaque enough to read text clearly */
+  color: #111;
+  padding: 3rem;
+  border-radius: 24px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(0,0,0,0.05);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(0,0,0,0.1);
+  transform: rotate(90deg);
+}
+
+.modal-body.typography-content {
+  text-align: left;
+}
+
+.modal-body.typography-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 2rem 0 1rem;
+  color: var(--color-primary);
+}
+
+.modal-body.typography-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1.5rem;
+}

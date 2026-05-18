@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Vision from './components/Vision';
@@ -8,12 +9,14 @@ import Commitment from './components/Commitment';
 import JoinCTA from './components/JoinCTA';
 import ImageBreak from './components/ImageBreak';
 import OpeningAnimation from './components/OpeningAnimation';
+import LegalModal from './components/LegalModal';
 import { useTranslation } from './context/TranslationContext';
 import './App.css';
 import './CustomFilters.css';
 
 function App() {
   const { t } = useTranslation();
+  const [modalType, setModalType] = useState<'legal' | 'privacy' | null>(null);
 
   return (
     <>
@@ -46,14 +49,32 @@ function App() {
             <div className="footer-links">
               <a href="#join" className="footer-link">{t('footer.contact')}</a>
               <span className="footer-divider">·</span>
-              <a href="#" className="footer-link">{t('footer.legal')}</a>
+              <a 
+                href="#" 
+                className="footer-link" 
+                onClick={(e) => { e.preventDefault(); setModalType('legal'); }}
+              >
+                {t('footer.legal')}
+              </a>
               <span className="footer-divider">·</span>
-              <a href="#" className="footer-link">{t('footer.privacy')}</a>
+              <a 
+                href="#" 
+                className="footer-link" 
+                onClick={(e) => { e.preventDefault(); setModalType('privacy'); }}
+              >
+                {t('footer.privacy')}
+              </a>
             </div>
             <p className="footer-copyright">&copy; {new Date().getFullYear()} PVDC. {t('footer.rights')}</p>
           </div>
         </footer>
       </div>
+
+      <LegalModal 
+        isOpen={modalType !== null} 
+        onClose={() => setModalType(null)} 
+        type={modalType} 
+      />
     </>
   );
 }
