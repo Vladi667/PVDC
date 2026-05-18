@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from '../context/TranslationContext';
 
 const Commitment: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="commitment-section">
       <motion.h2 
@@ -11,7 +14,7 @@ const Commitment: React.FC = () => {
         viewport={{ once: true }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
       >
-        "La démocratie <span className="text-gradient">verte</span>, <br/> notre choix pour un <span className="text-gradient-red">avenir meilleur</span>."
+        "{t('commitment.part1')}<span className="text-gradient">{t('commitment.highlight1')}</span>{t('commitment.part2')}<span className="text-gradient-red">{t('commitment.highlight2')}</span>{t('commitment.part3')}"
       </motion.h2>
     </section>
   );

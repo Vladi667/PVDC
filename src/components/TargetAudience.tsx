@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import { useTranslation } from '../context/TranslationContext';
 
 const TargetAudience: React.FC = () => {
   const containerRef = useRef(null);
@@ -10,16 +11,17 @@ const TargetAudience: React.FC = () => {
   });
   
   const scale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
+  const { t } = useTranslation();
 
   const audience = [
-    "Les jeunes",
-    "Les femmes",
-    "Les travailleurs",
-    "Les entrepreneurs",
-    "Les agriculteurs",
-    "Les étudiants",
-    "La diaspora",
-    "Tous les bâtisseurs de l'avenir"
+    t('audience.1'),
+    t('audience.2'),
+    t('audience.3'),
+    t('audience.4'),
+    t('audience.5'),
+    t('audience.6'),
+    t('audience.7'),
+    t('audience.8')
   ];
 
   const containerVariants = {
@@ -57,11 +59,11 @@ const TargetAudience: React.FC = () => {
           variants={containerVariants}
         >
           <motion.span className="eyebrow" variants={itemVariants}>
-            Le Parti de Tous
+            {t('audience.eyebrow')}
           </motion.span>
           
           <motion.h2 className="title-large" variants={itemVariants}>
-            Chaque citoyen <br/>a un rôle à jouer.
+            {t('audience.title.part1')} <br/>{t('audience.title.part2')}
           </motion.h2>
 
           <ul className="audience-grid">

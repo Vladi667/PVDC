@@ -1,17 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Scale, Users, MessageCircle, Flag, Briefcase, Hammer, Heart } from 'lucide-react';
+import { useTranslation } from '../context/TranslationContext';
 
 const Values: React.FC = () => {
+  const { t } = useTranslation();
+
   const values = [
-    { label: "Respect", icon: Shield },
-    { label: "Justice", icon: Scale },
-    { label: "Unité", icon: Users },
-    { label: "Dialogue", icon: MessageCircle },
-    { label: "Patriotisme", icon: Flag },
-    { label: "Responsabilité", icon: Briefcase },
-    { label: "Travail", icon: Hammer },
-    { label: "Solidarité", icon: Heart },
+    { label: t('values.1'), icon: Shield },
+    { label: t('values.2'), icon: Scale },
+    { label: t('values.3'), icon: Users },
+    { label: t('values.4'), icon: MessageCircle },
+    { label: t('values.5'), icon: Flag },
+    { label: t('values.6'), icon: Briefcase },
+    { label: t('values.7'), icon: Hammer },
+    { label: t('values.8'), icon: Heart },
   ];
 
   const containerVariants = {
@@ -47,12 +50,11 @@ const Values: React.FC = () => {
           variants={containerVariants}
         >
           <motion.span className="eyebrow eyebrow-dark" variants={headingVariants}>
-            Nos Valeurs
+            {t('values.eyebrow')}
           </motion.span>
           
           <motion.h2 className="title-large values-title-v2" variants={headingVariants}>
-            Une politique de proximité{' '}
-            <span className="values-accent">tournée vers les solutions.</span>
+            {t('values.title.part1')} <span className="values-accent">{t('values.title.highlight')}</span>
           </motion.h2>
 
           <div className="values-grid-v2">

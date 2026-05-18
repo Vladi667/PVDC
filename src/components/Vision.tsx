@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useTranslation } from '../context/TranslationContext';
 
 const Vision: React.FC = () => {
   const containerRef = useRef(null);
@@ -9,13 +10,14 @@ const Vision: React.FC = () => {
   });
   
   const scale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
+  const { t } = useTranslation();
 
   const points = [
-    "Uni",
-    "Souverain",
-    "Démocratique",
-    "Économiquement ambitieux",
-    "Socialement équilibré"
+    t('vision.point1'),
+    t('vision.point2'),
+    t('vision.point3'),
+    t('vision.point4'),
+    t('vision.point5')
   ];
 
   const containerVariants = {
@@ -42,7 +44,7 @@ const Vision: React.FC = () => {
             src="/photo2.jpg" 
             alt="Notre Vision" 
             className="split-image"
-            style={{ scale }}
+            style={{ scale, objectPosition: 'top center' }}
           />
         </div>
       </div>
@@ -56,15 +58,15 @@ const Vision: React.FC = () => {
           variants={containerVariants}
         >
           <motion.span className="eyebrow" variants={itemVariants}>
-            Notre Vision
+            {t('vision.eyebrow')}
           </motion.span>
           
           <motion.h2 className="title-large" variants={itemVariants}>
-            Une <span className="text-gradient">dynamique</span> <br/>de terrain.
+            {t('vision.title.part1')}<span className="text-gradient">{t('vision.title.highlight')}</span><br/>{t('vision.title.part2')}
           </motion.h2>
           
           <motion.p className="subtitle" variants={itemVariants}>
-            Sous l'impulsion de sa présidente, <strong>Michèle Bilong Fogoum</strong>, le PVDC est proche des populations et tourné vers les grands défis du Cameroun moderne.
+            {t('vision.subtitle')}
           </motion.p>
 
           <ul className="vision-list">

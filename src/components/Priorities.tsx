@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useTranslation } from '../context/TranslationContext';
 
 const Priorities: React.FC = () => {
   const containerRef = useRef(null);
@@ -9,14 +10,15 @@ const Priorities: React.FC = () => {
   });
   
   const scale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
+  const { t } = useTranslation();
 
   const priorities = [
-    { num: "01", title: "Emploi et jeunesse", desc: "Soutien à l'innovation et l'entrepreneuriat.", accent: "var(--color-primary)" },
-    { num: "02", title: "Autonomie alimentaire", desc: "Moderniser l'agriculture locale.", accent: "var(--color-primary)" },
-    { num: "03", title: "Gouvernance", desc: "Gestion publique transparente et efficace.", accent: "var(--color-secondary)" },
-    { num: "04", title: "Santé & Cadre de vie", desc: "Accès à l'eau potable et à l'énergie.", accent: "var(--color-primary)" },
-    { num: "05", title: "Développement local", desc: "Valorisation des communes et régions.", accent: "var(--color-primary)" },
-    { num: "06", title: "Ressources nationales", desc: "Préservation des richesses naturelles.", accent: "var(--color-secondary)" }
+    { num: "01", title: t('priorities.1.title'), desc: t('priorities.1.desc'), accent: "var(--color-primary)" },
+    { num: "02", title: t('priorities.2.title'), desc: t('priorities.2.desc'), accent: "var(--color-primary)" },
+    { num: "03", title: t('priorities.3.title'), desc: t('priorities.3.desc'), accent: "var(--color-secondary)" },
+    { num: "04", title: t('priorities.4.title'), desc: t('priorities.4.desc'), accent: "var(--color-primary)" },
+    { num: "05", title: t('priorities.5.title'), desc: t('priorities.5.desc'), accent: "var(--color-primary)" },
+    { num: "06", title: t('priorities.6.title'), desc: t('priorities.6.desc'), accent: "var(--color-secondary)" }
   ];
 
   const containerVariants = {
@@ -53,11 +55,11 @@ const Priorities: React.FC = () => {
           variants={containerVariants}
         >
           <motion.span className="eyebrow" variants={headingVariants}>
-            Nos Priorités
+            {t('priorities.eyebrow')}
           </motion.span>
           
           <motion.h2 className="title-large" variants={headingVariants}>
-            Six axes d'action <br/>majeurs.
+            {t('priorities.title.part1')} <br/>{t('priorities.title.part2')}
           </motion.h2>
 
           <div className="priorities-grid-v2">

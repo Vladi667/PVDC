@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
+import { useTranslation } from '../context/TranslationContext';
 
 const JoinCTA: React.FC = () => {
   const whatsappNumber = "+237699908205"; 
+  const { t } = useTranslation();
   const message = "Bonjour! Je souhaite rejoindre le mouvement PVDC et contribuer à l'avenir du Cameroun.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
@@ -17,11 +19,11 @@ const JoinCTA: React.FC = () => {
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
         >
-          <span className="eyebrow">Rejoignez le Mouvement</span>
-          <h2 className="title-massive cta-title">Ensemble, <br/>construisons l'avenir.</h2>
+          <span className="eyebrow">{t('join.eyebrow')}</span>
+          <h2 className="title-massive cta-title">{t('join.title.part1')} <br/>{t('join.title.part2')}</h2>
           
           <p className="subtitle cta-subtitle">
-            Notre beau pays le Cameroun a besoin d'idées nouvelles, d'énergie nouvelle et d'une vision tournée vers l'avenir.
+            {t('join.subtitle')}
           </p>
           
           <a 
@@ -31,7 +33,7 @@ const JoinCTA: React.FC = () => {
             className="btn-whatsapp"
           >
             <MessageCircle size={32} />
-            Nous contacter
+            {t('join.btn')}
           </a>
         </motion.div>
       </div>

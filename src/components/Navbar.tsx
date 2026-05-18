@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from '../context/TranslationContext';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const { language, toggleLanguage, t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -23,9 +25,27 @@ const Navbar: React.FC = () => {
           />
         </a>
 
-        <a href="#join" className="nav-cta">
-          Rejoindre
-        </a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <button 
+            onClick={toggleLanguage}
+            style={{
+              background: 'none',
+              border: '1px solid rgba(0,0,0,0.1)',
+              borderRadius: '20px',
+              padding: '0.3rem 0.6rem',
+              cursor: 'pointer',
+              fontWeight: 700,
+              fontSize: '0.8rem',
+              color: 'var(--color-primary)'
+            }}
+          >
+            {language.toUpperCase()}
+          </button>
+          
+          <a href="#join" className="nav-cta">
+            {t('nav.join')}
+          </a>
+        </div>
       </nav>
     </div>
   );

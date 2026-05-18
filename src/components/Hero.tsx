@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from '../context/TranslationContext';
 
 const Hero: React.FC = () => {
   const containerRef = useRef(null);
@@ -9,8 +10,8 @@ const Hero: React.FC = () => {
     offset: ["start start", "end start"]
   });
   
-  // const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  const { t } = useTranslation();
 
   return (
     <section className="split-section cameroon-section-bg" ref={containerRef}>
@@ -22,7 +23,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: "spring" as const, stiffness: 100, damping: 20, delay: 0.1 }}
           >
-            Le Parti de l'Avenir
+            {t('hero.eyebrow')}
           </motion.span>
           
           <motion.h1 
@@ -31,8 +32,8 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring" as const, stiffness: 100, damping: 20, delay: 0.2 }}
           >
-            Un Cameroun plus juste, <br/>
-            plus <span className="text-gradient">fort</span>, plus propre.
+            {t('hero.title.part1')} <br/>
+            {t('hero.title.part2')} <span className="text-gradient">{t('hero.title.highlight')}</span>{t('hero.title.part3')}
           </motion.h1>
           
           <motion.p 
@@ -41,7 +42,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            Le <strong>Parti Vert pour la Démocratie au Cameroun (PVDC)</strong> porte une ambition claire : construire un pays moderne et prospère, où le développement économique respecte les populations et les territoires.
+            {t('hero.subtitle')}
           </motion.p>
           
           <motion.div
@@ -50,7 +51,7 @@ const Hero: React.FC = () => {
             transition={{ type: "spring" as const, stiffness: 100, damping: 20, delay: 0.6 }}
           >
             <a href="#join" className="btn-glow">
-              Rejoindre le mouvement
+              {t('hero.btn')}
               <span className="btn-icon">
                 <ArrowRight size={20} />
               </span>
