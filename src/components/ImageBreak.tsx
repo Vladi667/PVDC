@@ -35,7 +35,7 @@ const ImageBreak: React.FC = () => {
         }}
       >
         <img 
-          src="/pvdc_landscape_break.png" 
+          src="/unnamed.jpg" 
           alt="Cameroon landscape" 
           style={{
             width: '100%',
