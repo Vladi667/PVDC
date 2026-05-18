@@ -25,21 +25,15 @@ const Navbar: React.FC = () => {
           />
         </a>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div className="nav-actions">
           <button 
             onClick={toggleLanguage}
-            style={{
-              background: 'none',
-              border: '1px solid rgba(0,0,0,0.1)',
-              borderRadius: '20px',
-              padding: '0.3rem 0.6rem',
-              cursor: 'pointer',
-              fontWeight: 700,
-              fontSize: '0.8rem',
-              color: 'var(--color-primary)'
-            }}
+            className="lang-toggle-btn tactile-active"
+            aria-label="Toggle language"
           >
-            {language.toUpperCase()}
+            <span className={`lang-text ${language === 'fr' ? 'active' : ''}`}>FR</span>
+            <div className="lang-divider"></div>
+            <span className={`lang-text ${language === 'en' ? 'active' : ''}`}>EN</span>
           </button>
           
           <a href="#join" className="nav-cta">
