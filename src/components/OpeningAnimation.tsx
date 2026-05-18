@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Leaf } from 'lucide-react';
 
 const OpeningAnimation: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -56,12 +55,16 @@ const OpeningAnimation: React.FC = () => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              style={{
-                color: 'var(--color-primary)',
-                filter: 'drop-shadow(0 10px 20px rgba(0, 135, 81, 0.3))'
-              }}
             >
-              <Leaf size={100} strokeWidth={1} />
+              <img 
+                src="/logo.png" 
+                alt="PVDC Logo" 
+                style={{
+                  width: '120px',
+                  height: 'auto',
+                  filter: 'drop-shadow(0 10px 20px rgba(0, 135, 81, 0.3))'
+                }} 
+              />
             </motion.div>
           </motion.div>
         </motion.div>
