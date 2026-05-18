@@ -38,13 +38,13 @@ const Vision: React.FC = () => {
 
   return (
     <section className="split-section reverse cameroon-section-bg" ref={containerRef}>
-      <div className="split-image-shell">
-        <div className="split-image-container">
+      <div className="split-image-shell" style={{ alignSelf: 'center', margin: '0 auto', maxWidth: '400px' }}>
+        <div className="split-image-container" style={{ height: 'auto', aspectRatio: '4/5' }}>
           <motion.img 
             src="/photo2.jpg" 
             alt="Notre Vision" 
             className="split-image"
-            style={{ scale, objectFit: 'contain', backgroundColor: 'rgba(0,0,0,0.03)' }}
+            style={{ scale, objectFit: 'cover', objectPosition: 'center' }}
           />
         </div>
       </div>
