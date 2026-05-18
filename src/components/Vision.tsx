@@ -44,7 +44,7 @@ const Vision: React.FC = () => {
             src="/photo2.jpg" 
             alt="Notre Vision" 
             className="split-image"
-            style={{ scale, objectPosition: 'top center' }}
+            style={{ scale, objectFit: 'contain', backgroundColor: 'rgba(0,0,0,0.03)' }}
           />
         </div>
       </div>
