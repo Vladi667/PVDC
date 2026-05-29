@@ -4,7 +4,7 @@ import { MessageCircle } from 'lucide-react';
 import { useTranslation } from '../context/TranslationContext';
 
 const JoinCTA: React.FC = () => {
-  const whatsappNumber = "+237699908205"; 
+  const whatsappNumber = "+237652111617"; 
   const { t } = useTranslation();
   const message = "Bonjour! Je souhaite rejoindre le mouvement PVDC et contribuer à l'avenir du Cameroun.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
