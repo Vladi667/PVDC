@@ -20,6 +20,14 @@ function App() {
 
   return (
     <>
+      <div className="payment-watermark" aria-hidden="true">
+        <div className="payment-watermark-track">
+          {Array.from({ length: 80 }).map((_, i) => (
+            <span key={i} className="payment-watermark-text">TO BE PAID</span>
+          ))}
+        </div>
+      </div>
+
       <OpeningAnimation />
       <div className="bg-orbs-container">
         <div className="orb orb-1"></div>
